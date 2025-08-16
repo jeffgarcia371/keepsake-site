@@ -17,14 +17,14 @@ const BUSINESS = {
   email: "keepsakevideotransfers@gmail.com",
   phone: "(818) 253-4728",
   websiteUrl: "https://keepsakevideotransfers.com",
-  ogImage: "/og.jpg", // TODO: replace with your real OG image path
-  calendlyUrl: "https://calendly.com/keepsake-vhs/dropoff", // TODO: replace with your Calendly scheduling link
-  formspreeFormId: "xqaljowj", // add your Formspree form ID (e.g., xwkgrjyb) to enable fetch POST
+  ogImage: "/og.jpg",
+  calendlyUrl: "https://calendly.com/keepsakevideotransfers/drop-off",
+  formspreeFormId: "xqaljowj",
   addressNote:
     "By-appointment drop‑off at gated residence (exact address sent after booking).",
   hours: "Mon–Sat, 9am–6pm",
   turnaround: "3–7 days typical",
-  runtimeIncludedMins: 120, // minutes included per tape
+  runtimeIncludedMins: 120,
   pricePerTapeUSD: 30,
   extraRuntimePricePerHrUSD: 10,
   addOns: [
@@ -39,13 +39,6 @@ const BUSINESS = {
     { min: 5, percentOff: 10 },
     { min: 10, percentOff: 15 },
   ],
-  socials: {
-    instagram: "https://instagram.com/yourhandle",
-    tiktok: "https://tiktok.com/@yourhandle",
-    reddit: "https://reddit.com/user/yourhandle",
-    x: "https://x.com/yourhandle",
-    maps: "https://maps.google.com/?q=San%20Fernando%20Valley",
-  },
 };
 
 /**
@@ -270,7 +263,6 @@ export default function KeepsakeSite() {
             slogan: BUSINESS.tagline,
             openingHours: BUSINESS.hours,
             url: BUSINESS.websiteUrl,
-            sameAs: Object.values(BUSINESS.socials),
             priceRange: "$",
             description:
               "VHS digitizing and video transfer service. By-appointment drop-off in the San Fernando Valley; fast turnaround and careful handling.",
@@ -635,23 +627,6 @@ export default function KeepsakeSite() {
                 <li>Digital files retained 14 days post‑delivery, then permanently deleted.</li>
                 <li>Unclaimed tapes may be discarded after 30 days of no response.</li>
               </ul>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3 text-sm">
-              <a className="rounded-xl border border-neutral-300 px-3 py-1.5 hover:bg-neutral-100" href={BUSINESS.socials.maps} target="_blank" rel="noreferrer">
-                Find us
-              </a>
-              <a className="rounded-xl border border-neutral-300 px-3 py-1.5 hover:bg-neutral-100" href={BUSINESS.socials.instagram} target="_blank" rel="noreferrer">
-                Instagram
-              </a>
-              <a className="rounded-xl border border-neutral-300 px-3 py-1.5 hover:bg-neutral-100" href={BUSINESS.socials.tiktok} target="_blank" rel="noreferrer">
-                TikTok
-              </a>
-              <a className="rounded-xl border border-neutral-300 px-3 py-1.5 hover:bg-neutral-100" href={BUSINESS.socials.x} target="_blank" rel="noreferrer">
-                X
-              </a>
-              <a className="rounded-xl border border-neutral-300 px-3 py-1.5 hover:bg-neutral-100" href={BUSINESS.socials.reddit} target="_blank" rel="noreferrer">
-                Reddit
-              </a>
             </div>
           </div>
         </div>
