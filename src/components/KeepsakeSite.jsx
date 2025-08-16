@@ -20,7 +20,7 @@ const BUSINESS = {
   ogImage: "/og.jpg",
   formspreeFormId: "xqaljowj",
   addressNote:
-    "By-appointment drop‑off at gated residence (exact address sent after booking).",
+    "By-appointment drop‑off or local pickup.",
   hours: "Mon–Sat, 9am–6pm",
   turnaround: "3–7 days typical",
   runtimeIncludedMins: 120,
@@ -360,20 +360,30 @@ export default function KeepsakeSite() {
 
       {/* How it works */}
       <section id="how" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">How it works</h2>
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          <Step n={1} title="Book a time">
-            Choose a window for drop‑off. We’ll send exact instructions for meeting at the gate.
-          </Step>
-          <Step n={2} title="Secure transfer">
-            We capture your tapes to high‑quality MP4 files. Light cleanup (levels, cropping) included.
-          </Step>
-          <Step n={3} title="Delivery your way">
-            Pick cloud link, USB, or both. We keep files for 14 days in case you need a re‑send.
-          </Step>
-          <Step n={4} title="Optional pickup / return">
-            Need help with logistics? We offer pickup and/or return drop‑off within 10 miles for $10 each way. Beyond that, +$1 per extra mile.
-          </Step>
+        <div className="grid lg:grid-cols-3 gap-8">
+          <div>
+            <Step n={1} title="Drop‑off or request pickup">
+              <p className="mt-2 text-sm text-neutral-700">
+                Schedule a time to drop‑off your tapes or request local pickup (within 10 miles).
+              </p>
+            </Step>
+          </div>
+
+          <div>
+            <Step n={2} title="Digitize and transfer">
+              <p className="mt-2 text-sm text-neutral-700">
+                We carefully capture your tapes and preserve them as high-quality MP4 files. 
+              </p>
+            </Step>
+          </div>
+
+          <div>
+            <Step n={3} title="Receive your digitized videos">
+              <p className="mt-2 text-sm text-neutral-700">
+                Receive a free download link to your digitized tapes. Choose additional storage options including CD, USB drive, or external hard drive. Local delivery is available for these items upon request.
+              </p>
+            </Step>
+          </div>
         </div>
       </section>
 
