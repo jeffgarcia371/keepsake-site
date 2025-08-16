@@ -18,7 +18,6 @@ const BUSINESS = {
   phone: "(818) 253-4728",
   websiteUrl: "https://keepsakevideotransfers.com",
   ogImage: "/og.jpg",
-  calendlyUrl: "https://calendly.com/keepsakevideotransfers/drop-off",
   formspreeFormId: "xqaljowj",
   addressNote:
     "By-appointment drop‑off at gated residence (exact address sent after booking).",
@@ -167,21 +166,21 @@ export default function KeepsakeSite() {
     setMeta("name", "twitter:image", BUSINESS.ogImage);
     setLink("canonical", BUSINESS.websiteUrl);
 
-    // Calendly embed assets
-    if (BUSINESS.calendlyUrl) {
-      if (!document.querySelector('link[href^="https://assets.calendly.com/assets/external/widget.css"]')) {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "https://assets.calendly.com/assets/external/widget.css";
-        document.head.appendChild(link);
-      }
-      if (!document.querySelector('script[src^="https://assets.calendly.com/assets/external/widget.js"]')) {
-        const script = document.createElement("script");
-        script.src = "https://assets.calendly.com/assets/external/widget.js";
-        script.async = true;
-        document.body.appendChild(script);
-      }
-    }
+    // Calendly embed assets - REMOVE
+    // if (BUSINESS.calendlyUrl) {
+    //   if (!document.querySelector('link[href^="https://assets.calendly.com/assets/external/widget.css"]')) {
+    //     const link = document.createElement("link");
+    //     link.rel = "stylesheet";
+    //     link.href = "https://assets.calendly.com/assets/external/widget.css";
+    //     document.head.appendChild(link);
+    //   }
+    //   if (!document.querySelector('script[src^="https://assets.calendly.com/assets/external/widget.js"]')) {
+    //     const script = document.createElement("script");
+    //     script.src = "https://assets.calendly.com/assets/external/widget.js";
+    //     script.async = true;
+    //     document.body.appendChild(script);
+    //   }
+    // }
   }, []);
 
   const calc = useMemo(
@@ -284,17 +283,17 @@ export default function KeepsakeSite() {
             <a href="#pricing" className="hover:text-indigo-600">
               Pricing
             </a>
-            <a href="#book" className="hover:text-indigo-600">
-              Book
+            <a href="#contact" className="hover:text-indigo-600">
+              Contact us
             </a>
             <a href="#faq" className="hover:text-indigo-600">
               FAQ
             </a>
             <a
-              href="#book"
+              href="#contact"
               className="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium bg-indigo-600 text-white shadow-sm hover:bg-indigo-700"
             >
-              Book now
+              Contact us
             </a>
           </nav>
         </div>
@@ -330,10 +329,10 @@ export default function KeepsakeSite() {
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#book"
+                href="#contact"
                 className="rounded-xl px-4 py-2 bg-indigo-600 text-white text-sm font-medium shadow hover:bg-indigo-700"
               >
-                Book a drop‑off
+                Contact us
               </a>
               <a
                 href="#pricing"
@@ -512,24 +511,6 @@ export default function KeepsakeSite() {
         </div>
       </section>
 
-      {/* Book Online */}
-      <section id="book" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Book a drop‑off online</h2>
-        <p className="mt-2 text-neutral-700 max-w-prose">
-          Prefer to lock a time right now? Pick a slot on our live calendar.
-        </p>
-        <div className="mt-6 rounded-2xl border border-neutral-200 bg-white shadow-sm overflow-hidden">
-          <div className="calendly-inline-widget" data-url={BUSINESS.calendlyUrl} style={{ minWidth: "320px", height: "700px" }} />
-        </div>
-        <div className="mt-3 text-xs text-neutral-500">
-          If the calendar doesn't load,{' '}
-          <a className="text-indigo-700 underline" href={BUSINESS.calendlyUrl} target="_blank" rel="noreferrer">
-            open it in a new tab
-          </a>
-          .
-        </div>
-      </section>
-
       {/* Contact / Quote */}
       <section id="contact" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
@@ -644,7 +625,7 @@ export default function KeepsakeSite() {
               FAQ
             </a>
             <a href="#contact" className="hover:text-neutral-900">
-              Contact
+              Contact us
             </a>
             <a
               href="#"
@@ -672,10 +653,10 @@ export default function KeepsakeSite() {
 
       {/* Floating CTA */}
       <a
-        href="#book"
+        href="#contact"
         className="fixed bottom-5 right-5 rounded-full bg-indigo-600 text-white px-4 py-2 text-sm font-medium shadow-lg hover:bg-indigo-700"
       >
-        Book now
+        Contact us
       </a>
     </div>
   );
