@@ -20,7 +20,7 @@ const BUSINESS = {
   ogImage: "/og.jpg",
   formspreeFormId: "xqaljowj",
   addressNote:
-    "By-appointment drop‑off or local pickup.",
+    "By-appointment drop‑off or local pickup",
   hours: "Mon–Sat, 9am–6pm",
   turnaround: "3–7 days typical",
   runtimeIncludedMins: 120,
@@ -527,7 +527,7 @@ export default function KeepsakeSite() {
           <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
             <h2 className="text-2xl font-semibold tracking-tight">Contact Us</h2>
             <p className="mt-2 text-sm text-neutral-700">
-              Prefer to talk now? Tap call. Otherwise, leave your details and we’ll get back to you fast.
+              Prefer to talk now? Give us a call. Otherwise, leave your details and we’ll get back to you as soon as possible.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <a href={`tel:${BUSINESS.phone.replace(/[^0-9]/g, "")}`} className="rounded-xl px-4 py-2 bg-indigo-600 text-white text-sm font-medium shadow hover:bg-indigo-700">
@@ -580,7 +580,7 @@ export default function KeepsakeSite() {
                   type="submit"
                   className="rounded-xl px-4 py-2 bg-indigo-600 text-white text-sm font-medium shadow hover:bg-indigo-700"
                 >
-                  Email request
+                  Send request
                 </button>
                 <a className="text-sm underline decoration-indigo-500 decoration-2 underline-offset-4" href={`mailto:${BUSINESS.email}`}>
                   Or write us directly
