@@ -12,8 +12,8 @@ import React, { useMemo, useState, useEffect } from "react";
 
 const BUSINESS = {
   name: "Keepsake Video Transfers",
-  tagline: "Digitize your VHS memories — safely, locally, and affordably.",
-  city: "San Fernando Valley, Los Angeles",
+  tagline: "We digitize your VHS memories safely and affordably.",
+  city: "Porter Ranch, Los Angeles",
   email: "keepsakevideotransfers@gmail.com",
   phone: "(818) 253-4728",
   websiteUrl: "https://keepsakevideotransfers.com",
@@ -27,9 +27,9 @@ const BUSINESS = {
   pricePerTapeUSD: 30,
   extraRuntimePricePerHrUSD: 10,
   addOns: [
-    { id: "usb", label: "USB drive (32GB)", price: 10 },
-    { id: "hdd", label: "External HDD (1TB)", price: 60 },
     { id: "cloud", label: "Cloud delivery link", price: 0 },
+    { id: "usb", label: "USB drive (32GB)", price: 10 },
+    { id: "dvd", label: "DVD", price: 5 },
     { id: "extra", label: "Extra copy per tape", price: 8 },
     { id: "pickup", label: "Pickup service +$10", price: 10 },
     { id: "return", label: "Drop-off service +$10", price: 10 },
@@ -122,7 +122,7 @@ function computeEstimate(tapes, runtimeMins, selectedAddOns) {
 
 export default function KeepsakeSite() {
   // Calculator state
-  const [tapes, setTapes] = useState(3);
+  const [tapes, setTapes] = useState(1);
   const [runtimeMins, setRuntimeMins] = useState(BUSINESS.runtimeIncludedMins);
   const [selectedAddOns, setSelectedAddOns] = useState(["cloud"]);
   const [formStatus, setFormStatus] = useState("idle");
@@ -210,7 +210,7 @@ export default function KeepsakeSite() {
           `Email: ${email}`,
           `Phone: ${phone}`,
           `Tapes: ${tapes}`,
-          `Avg runtime per tape: ${runtimeMins} min`,
+          `Average runtime per tape (min): ${runtimeMins} min`,
           `Selected add‑ons: ${selectedAddOns.join(", ") || "none"}`,
           `Estimated total: $${calc.subtotal.toFixed(2)}`,
           "",
@@ -302,16 +302,16 @@ export default function KeepsakeSite() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-50 via-white to-violet-50" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-10 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900">
-              Relive your VHS memories —
+              Keepsake Video Transfers
               <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 leading-[1.15] pb-[0.2em]">
-                digitized with care in the San Fernando Valley
+                VHS digitization
               </span>
             </h1>
             <p className="mt-4 text-neutral-700 max-w-prose">
-              We transfer VHS tapes to modern digital formats so your family stories don’t fade. Local, by‑appointment drop‑off and fast turnaround. No upsell gimmicks — just clean, reliable transfers.
+              We transfer VHS tapes to modern digital formats so your family stories don’t fade. Local, by‑appointment drop‑off and fast turnaround. No upsell gimmicks; just clean, reliable transfers.
             </p>
             <ul className="mt-6 grid sm:grid-cols-2 gap-2 text-sm text-neutral-700">
               <li className="flex items-center gap-2">
@@ -345,21 +345,19 @@ export default function KeepsakeSite() {
           <div className="relative">
             <div className="aspect-video w-full rounded-2xl bg-neutral-200 shadow-inner overflow-hidden">
               {/* Placeholder mockup */}
-              <div className="h-full w-full grid grid-cols-3">
-                <div className="bg-neutral-100" />
-                <div className="bg-neutral-200" />
-                <div className="bg-neutral-300" />
-              </div>
-            </div>
-            <div className="mt-4 text-xs text-neutral-500 text-center">
-              Sample preview — replace with real before/after stills later.
+              <img
+                src="/images/vhs-placeholder.jpg"
+                alt="Stack of VHS tapes"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section id="how" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <section id="how" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">How it works</h2>
         <div className="grid lg:grid-cols-3 gap-8">
           <div>
             <Step n={1} title="Drop‑off or request pickup">
@@ -388,7 +386,7 @@ export default function KeepsakeSite() {
       </section>
 
       {/* Pricing & Calculator */}
-      <section id="pricing" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <section id="pricing" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Simple pricing</h2>
         <p className="mt-2 text-neutral-700 max-w-prose">
           One flat rate per tape includes up to {BUSINESS.runtimeIncludedMins} minutes. Longer tapes are billed at ${
@@ -413,7 +411,7 @@ export default function KeepsakeSite() {
                 <Dot /> Light trim & cropping
               </li>
               <li className="flex items-center gap-2">
-                <Dot /> Optional USB/HDD add‑ons
+                <Dot /> Optional USB/DVD add‑ons
               </li>
             </ul>
           </div>
@@ -423,7 +421,7 @@ export default function KeepsakeSite() {
             <div className="mt-4 grid md:grid-cols-2 gap-4">
               <NumberField label="Number of tapes" value={tapes} min={0} onChange={(v) => setTapes(v)} />
               <NumberField
-                label={`Avg runtime per tape (min)`}
+                label={`Average runtime per tape (min)`}
                 value={runtimeMins}
                 min={0}
                 onChange={(v) => setRuntimeMins(v)}
@@ -464,7 +462,7 @@ export default function KeepsakeSite() {
             </div>
 
             <div className="mt-6 text-xs text-neutral-500">
-              Estimates are not final quotes. Sales tax may apply to physical media (USB/HDD).
+              Estimates are not final quotes.
             </div>
           </div>
         </div>
@@ -483,8 +481,8 @@ export default function KeepsakeSite() {
       </section>
 
       {/* Why choose us */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Why Keepsake</h2>
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Why Choose Us?</h2>
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           <Feature title="Local & accountable">
             Meet a real person to handle your tapes. No shipping your memories across the country.
@@ -499,7 +497,7 @@ export default function KeepsakeSite() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <section id="faq" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">FAQ</h2>
         <div className="mt-8 divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
           <Faq q="Do you fix damaged tapes or restore video?">
@@ -516,24 +514,26 @@ export default function KeepsakeSite() {
             We only accept content you own or have rights to. Please don’t submit copyrighted movies or shows.
           </Faq>
           <Faq q="Do you offer pickup or return drop‑off?">
-            Yes — within 10 miles it’s $10 <i>each way</i>. Beyond 10 miles, add $1 per extra mile (rounded up). Select these in the estimator or mention it when you book.
+            Yes, within 10 miles it’s $10 <i>each way</i>. Beyond 10 miles, add $1 per extra mile (rounded up). Select these in the estimator or mention it when you book.
+          </Faq>
+          <Faq q="Do you offer pickup or return drop‑off?">
+            We currently specialize in VHS and VHS-C tape transfers. We currently do not service other formats such as Hi8, MiniDV, or Betamax.
           </Faq>
         </div>
       </section>
 
       {/* Contact / Quote */}
-      <section id="contact" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <section id="contact" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
             <h2 className="text-2xl font-semibold tracking-tight">Contact Us</h2>
             <p className="mt-2 text-sm text-neutral-700">
-              Prefer to talk now? Give us a call. Otherwise, leave your details and we’ll get back to you as soon as possible.
+              To get started, give us a call or leave your details below.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <a href={`tel:${BUSINESS.phone.replace(/[^0-9]/g, "")}`} className="rounded-xl px-4 py-2 bg-indigo-600 text-white text-sm font-medium shadow hover:bg-indigo-700">
                 Call {BUSINESS.phone}
               </a>
-              <span className="self-center text-sm text-neutral-600">or leave your details below</span>
             </div>
 
             {formStatus === "success" && (
@@ -625,7 +625,7 @@ export default function KeepsakeSite() {
 
       {/* Footer */}
       <footer className="border-t border-neutral-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-neutral-600 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-neutral-600 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <div className="font-medium text-neutral-800">{BUSINESS.name}</div>
             <div className="text-xs">© {new Date().getFullYear()} All rights reserved.</div>
