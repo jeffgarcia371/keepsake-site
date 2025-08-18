@@ -274,7 +274,7 @@ export default function KeepsakeSite() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="/images/logo_v3.png"
+              src="/logo_v3.png"
               alt="Keepsake logo"
               className="h-9 w-9 rounded-xl object-cover shadow-sm"
             />
@@ -350,7 +350,7 @@ export default function KeepsakeSite() {
             <div className="aspect-video w-full rounded-2xl bg-neutral-200 shadow-inner overflow-hidden">
               {/* Placeholder mockup */}
               <img
-                src="/images/vhstapes.jpg"
+                src="/vhstapes.jpg"
                 alt="Stack of VHS tapes"
                 className="h-full w-full object-cover"
               />
