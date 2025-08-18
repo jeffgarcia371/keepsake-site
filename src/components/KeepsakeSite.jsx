@@ -313,9 +313,9 @@ export default function KeepsakeSite() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900">
-              Keepsake Video Transfers
+              Preserve your memories
               <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 leading-[1.15] pb-[0.2em]">
-                VHS digitization
+                VHS to digital transfers handled with care
               </span>
             </h1>
             <p className="mt-4 text-neutral-700 max-w-prose">
@@ -354,10 +354,10 @@ export default function KeepsakeSite() {
             <div className="aspect-video w-full rounded-2xl bg-neutral-200 shadow-inner overflow-hidden">
               {/* Placeholder mockup */}
               <Image
-                src="/tapes.jpg"
+                src="/vhstapes.jpg"
                 alt="Stack of VHS tapes"
-                width={400}
-                height={300}
+                width={592}
+                height={333}
                 className="rounded-2xl shadow-md"
               />
             </div>
@@ -606,17 +606,27 @@ export default function KeepsakeSite() {
                 <b>Service area:</b> {BUSINESS.city}
               </li>
               <li>
-                <b>Hours:</b> {BUSINESS.hours}
-              </li>
-              <li>
                 <b>Turnaround:</b> {BUSINESS.turnaround}
               </li>
               <li>
                 <b>Drop‑off:</b> {BUSINESS.addressNote}
               </li>
+
               <li>
-                <b>Contact:</b> <a className="text-indigo-700" href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a> ·{' '}
-                <a className="text-indigo-700" href={`tel:${BUSINESS.phone.replace(/[^\d]/g, "")}`}>{BUSINESS.phone}</a>
+                <b>Email:</b>
+                <div className="mt-1">
+                  <a className="text-indigo-700" href={`mailto:${BUSINESS.email}`}>
+                    {BUSINESS.email}
+                  </a>
+                </div>
+              </li>
+              <li>
+                <b>Phone number:</b>
+                <div className="mt-1">
+                  <a className="text-indigo-700" href={`tel:${BUSINESS.phone.replace(/[^\d]/g, "")}`}>
+                    {BUSINESS.phone}
+                  </a>
+                </div>
               </li>
             </ul>
             <div className="mt-6">
