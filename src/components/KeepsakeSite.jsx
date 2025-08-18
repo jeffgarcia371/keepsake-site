@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
+import Image from "next/image";
 
 /**
  * Keepsake Video Transfers — One‑Page Website
@@ -273,10 +274,13 @@ export default function KeepsakeSite() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img
+            <Image
               src="/logo_v3.png"
-              alt="Keepsake logo"
-              className="h-9 w-9 rounded-xl object-cover shadow-sm"
+              alt="Keepsake Video Transfers logo"
+              width={180}
+              height={180}
+              priority
+              className="mb-6"
             />
             <div className="font-semibold tracking-tight">{BUSINESS.name}</div>
           </div>
@@ -349,10 +353,12 @@ export default function KeepsakeSite() {
           <div className="relative">
             <div className="aspect-video w-full rounded-2xl bg-neutral-200 shadow-inner overflow-hidden">
               {/* Placeholder mockup */}
-              <img
-                src="/vhstapes.jpg"
+              <Image
+                src="/tapes.jpg"
                 alt="Stack of VHS tapes"
-                className="h-full w-full object-cover"
+                width={400}
+                height={300}
+                className="rounded-2xl shadow-md"
               />
             </div>
           </div>
