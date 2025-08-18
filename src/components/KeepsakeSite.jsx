@@ -273,7 +273,11 @@ export default function KeepsakeSite() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 shadow-sm" />
+            <img
+              src="/images/logo-vhs.png"
+              alt="Keepsake logo"
+              className="h-9 w-9 rounded-xl object-cover shadow-sm"
+            />
             <div className="font-semibold tracking-tight">{BUSINESS.name}</div>
           </div>
           <nav className="hidden md:flex gap-6 text-sm">
@@ -346,7 +350,7 @@ export default function KeepsakeSite() {
             <div className="aspect-video w-full rounded-2xl bg-neutral-200 shadow-inner overflow-hidden">
               {/* Placeholder mockup */}
               <img
-                src="/images/vhs-placeholder.jpg"
+                src="/images/vhstapes.jpg"
                 alt="Stack of VHS tapes"
                 className="h-full w-full object-cover"
               />
@@ -356,9 +360,9 @@ export default function KeepsakeSite() {
       </section>
 
       {/* How it works */}
-      <section id="how" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <section id="how" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">How it works</h2>
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="mt-6 grid lg:grid-cols-3 gap-8">
           <div>
             <Step n={1} title="Drop‑off or request pickup">
               <p className="mt-2 text-sm text-neutral-700">
@@ -386,7 +390,7 @@ export default function KeepsakeSite() {
       </section>
 
       {/* Pricing & Calculator */}
-      <section id="pricing" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <section id="pricing" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Simple pricing</h2>
         <p className="mt-2 text-neutral-700 max-w-prose">
           One flat rate per tape includes up to {BUSINESS.runtimeIncludedMins} minutes. Longer tapes are billed at ${
@@ -481,7 +485,7 @@ export default function KeepsakeSite() {
       </section>
 
       {/* Why choose us */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Why Choose Us?</h2>
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           <Feature title="Local & accountable">
@@ -497,7 +501,7 @@ export default function KeepsakeSite() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <section id="faq" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">FAQ</h2>
         <div className="mt-8 divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
           <Faq q="Do you fix damaged tapes or restore video?">
@@ -523,7 +527,7 @@ export default function KeepsakeSite() {
       </section>
 
       {/* Contact / Quote */}
-      <section id="contact" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <section id="contact" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
             <h2 className="text-2xl font-semibold tracking-tight">Contact Us</h2>
