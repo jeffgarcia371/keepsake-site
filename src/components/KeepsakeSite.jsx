@@ -271,43 +271,40 @@ export default function KeepsakeSite() {
       />
 
       {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-neutral-200">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/logo_v3.png"
-              alt="Keepsake Video Transfers logo"
-              width={180}
-              height={180}
-              priority
-              className="mb-6"
-            />
-            <div className="font-semibold tracking-tight">{BUSINESS.name}</div>
+        <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-neutral-200">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[72px]">
+            <div className="flex items-center gap-3 h-full items-center">
+          <Image
+            src="/logo_v4.png"
+            alt="Keepsake Video Transfers logo"
+            width={40}
+            height={40}
+            priority
+            className="object-contain"
+          />
+          <div className="font-semibold tracking-tight flex items-center h-full text-lg">{BUSINESS.name}</div>
+            </div>
+            <nav className="hidden md:flex gap-6 text-medium font-medium h-full items-center">
+          <a href="#how" className="hover:text-indigo-600 flex items-center h-full">
+            How it works
+          </a>
+          <a href="#pricing" className="hover:text-indigo-600 flex items-center h-full">
+            Pricing
+          </a>
+          <a href="#faq" className="hover:text-indigo-600 flex items-center h-full">
+            FAQ
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium bg-indigo-600 text-white shadow-sm hover:bg-indigo-700"
+          >
+            Contact us
+          </a>
+            </nav>
           </div>
-          <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#how" className="hover:text-indigo-600">
-              How it works
-            </a>
-            <a href="#pricing" className="hover:text-indigo-600">
-              Pricing
-            </a>
-            <a href="#contact" className="hover:text-indigo-600">
-              Contact us
-            </a>
-            <a href="#faq" className="hover:text-indigo-600">
-              FAQ
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center rounded-xl px-3 py-2 text-sm font-medium bg-indigo-600 text-white shadow-sm hover:bg-indigo-700"
-            >
-              Contact us
-            </a>
-          </nav>
-        </div>
-      </header>
+        </header>
 
-      {/* Hero */}
+        {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-50 via-white to-violet-50" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 grid lg:grid-cols-2 gap-8 items-center">
