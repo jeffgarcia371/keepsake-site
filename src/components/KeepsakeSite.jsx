@@ -273,16 +273,15 @@ export default function KeepsakeSite() {
       {/* Header */}
         <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b border-neutral-200">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[72px]">
-            <div className="flex items-center gap-3 h-full items-center">
-          <Image
-            src="/logo_v4.png"
-            alt="Keepsake Video Transfers logo"
-            width={40}
-            height={40}
-            priority
-            className="object-contain"
-          />
-          <div className="font-semibold tracking-tight flex items-center h-full text-lg">{BUSINESS.name}</div>
+            <div className="flex items-center h-full">
+              <Image
+                src="/kvt_full_logo_v2.png"
+                alt="Keepsake"
+                width={260}
+                height={64}
+                priority
+                className="object-contain"
+              />
             </div>
             <nav className="hidden md:flex gap-6 text-medium font-medium h-full items-center">
           <a href="#how" className="hover:text-indigo-600 flex items-center h-full">
@@ -308,58 +307,58 @@ export default function KeepsakeSite() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-50 via-white to-violet-50" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 grid lg:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900">
-              Preserve your memories
-              <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 leading-[1.15] pb-[0.2em]">
-                VHS to digital transfers handled with care
-              </span>
-            </h1>
-            <p className="mt-4 text-neutral-700 max-w-prose">
-              We transfer VHS tapes to modern digital formats so your family stories don’t fade. Local, by‑appointment drop‑off and fast turnaround. No upsell gimmicks; just clean, reliable transfers.
-            </p>
-            <ul className="mt-6 grid sm:grid-cols-2 gap-2 text-sm text-neutral-700">
-              <li className="flex items-center gap-2">
-                <Dot /> High‑quality capture & deinterlacing
-              </li>
-              <li className="flex items-center gap-2">
-                <Dot /> MP4 files for easy sharing
-              </li>
-              <li className="flex items-center gap-2">
-                <Dot /> {BUSINESS.turnaround}
-              </li>
-              <li className="flex items-center gap-2">
-                <Dot /> {BUSINESS.addressNote}
-              </li>
-            </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                className="rounded-xl px-4 py-2 bg-indigo-600 text-white text-sm font-medium shadow hover:bg-indigo-700"
-              >
-                Contact us
-              </a>
-              <a
-                href="#pricing"
-                className="rounded-xl px-4 py-2 border border-neutral-300 text-neutral-900 text-sm font-medium hover:bg-neutral-100"
-              >
-                See pricing
-              </a>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="aspect-video w-full rounded-2xl bg-neutral-200 shadow-inner overflow-hidden">
-              {/* Placeholder mockup */}
-              <Image
-                src="/vhstapes.jpg"
-                alt="Stack of VHS tapes"
-                width={592}
-                height={333}
-                className="rounded-2xl shadow-md"
-              />
-            </div>
-          </div>
-        </div>
+          <div className="order-2 lg:order-1">
+             <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900">
+               Preserve your memories
+               <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 leading-[1.15] pb-[0.2em]">
+                 VHS to digital transfers handled with care
+               </span>
+             </h1>
+             <p className="mt-4 text-neutral-700 max-w-prose">
+               We transfer VHS tapes to modern digital formats so your family stories don’t fade. Local, by‑appointment drop‑off and fast turnaround. No upsell gimmicks; just clean, reliable transfers.
+             </p>
+             <ul className="mt-6 grid sm:grid-cols-2 gap-2 text-sm text-neutral-700">
+               <li className="flex items-center gap-2">
+                 <Dot /> High‑quality capture & deinterlacing
+               </li>
+               <li className="flex items-center gap-2">
+                 <Dot /> MP4 files for easy sharing
+               </li>
+               <li className="flex items-center gap-2">
+                 <Dot /> {BUSINESS.turnaround}
+               </li>
+               <li className="flex items-center gap-2">
+                 <Dot /> {BUSINESS.addressNote}
+               </li>
+             </ul>
+             <div className="mt-8 flex flex-wrap gap-3">
+               <a
+                 href="#contact"
+                 className="rounded-xl px-4 py-2 bg-indigo-600 text-white text-sm font-medium shadow hover:bg-indigo-700"
+               >
+                 Contact us
+               </a>
+               <a
+                 href="#pricing"
+                 className="rounded-xl px-4 py-2 border border-neutral-300 text-neutral-900 text-sm font-medium hover:bg-neutral-100"
+               >
+                 See pricing
+               </a>
+             </div>
+           </div>
+          <div className="relative order-1 lg:order-2">
+             <div className="aspect-video w-full rounded-2xl bg-neutral-200 shadow-inner overflow-hidden">
+               {/* Placeholder mockup */}
+               <Image
+                 src="/vhstapes_v3.jpg"
+                 alt="Stack of VHS tapes"
+                 width={592}
+                 height={333}
+                 className="rounded-2xl shadow-md"
+               />
+             </div>
+           </div>
+         </div>
       </section>
 
       {/* How it works */}
